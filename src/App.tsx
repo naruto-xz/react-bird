@@ -17,7 +17,11 @@ import React, {useState,useCallback} from 'react';
 // import EventPractice from "@/pages/JS/Event"
 // import SetPractice from "@/pages/JS/Set"
 // import MapPractice from "@/pages/JS/Map"
-import FuctionPractice from "@/pages/JS/Fuction"
+// import FunctionPractice from "@/pages/JS/Function"
+// import PromisePractice from "@/pages/JS/Promise"
+// import AsyncPractice from "@/pages/JS/Async";
+// import PrototypePractice from "@/pages/JS/Prototype";
+import InheritPractice from "@/pages/JS/Inherit";
 
 function App() {
   return (
@@ -36,7 +40,11 @@ function App() {
       {/*<DatePractice />*/}
       {/*<SetPractice />*/}
       {/*<MapPractice />*/}
-      <FuctionPractice />
+      {/*<FunctionPractice />*/}
+      {/*<PromisePractice />*/}
+      {/*<AsyncPractice />*/}
+      {/*<PrototypePractice />*/}
+      <InheritPractice />
     </div>
   );
 }

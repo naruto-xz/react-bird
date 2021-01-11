@@ -33,7 +33,7 @@ const ObjectPractice = ()=> {
   /**
    * ES6
    */
-  let obj:any = {a:1, b:2};
+  // let obj:any = {a:1, b:2};
   //key值允许表达式写法
   // let obj1 = {
   //   [1+1]: 1
@@ -60,6 +60,54 @@ const ObjectPractice = ()=> {
   // let obj1 = {a:{b:2}}
   // let {a:{b}} = {...obj1};
   // console.log(b); //2
+
+  /**
+   * 对象深入理解
+   * 数据属性与访问器属性
+   */
+  //数据属性
+  // let obj:any = {
+  //   name: 'zs',
+  //   age: 23
+  // }
+  // Object.defineProperty(obj, 'age', {
+  //   // configurable: false,  //是否允许删除
+  //   // writable: false,  //是否允许修改
+  //   // enumerable: false, //是否允许修改
+  //   // value: 24 //改值
+  // })
+  // // delete obj.age
+  // // obj.age = 24;
+  // console.log(obj.age)
+
+  // Object.defineProperties(obj, {
+  //   name: {
+  //     configurable: false
+  //   },
+  //   age: {
+  //     writable: false
+  //   }
+  // })
+  // // delete obj.name
+  // // obj.age =  24
+  // console.log(obj.name, obj.age)
+
+  //访问器属性
+  // let obj:any = {
+  //     name: 'zs',
+  //     _age: 23  //定义为内部属性,只能通过访问器属性修改
+  //   }
+  // Object.defineProperty(obj, 'age', {
+  //   set(v) {
+  //     this._age = v;
+  //   },
+  //   get() {
+  //     return this._age
+  //   }
+  // })
+  // console.log(obj.age)
+  // obj.age = 24; //通过访问器属性修改
+  // console.log(obj.age)
 
   return (
     <h5>ObjectPractice</h5>

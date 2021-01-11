@@ -1,5 +1,5 @@
 import React from "react";
-const FuctionPractice = ()=> {
+const FunctionPractice = ()=> {
   /**
    * ES5
    */
@@ -50,8 +50,58 @@ const FuctionPractice = ()=> {
 
   //箭头函数相关、默认参数、rest使用(获取多余参数，转化为数组)
 
+  /**
+   * 闭包
+   */
+  //1.读取其它函数内部变量的函数,下面就是通过闭包的形式读取了fn内部的变量x。
+  // function fn(){
+  //   let x = 1;
+  //   return function fn1(){
+  //     return x+1;
+  //   }
+  // }
+  // let res = fn();
+  // console.log(res()); //2
+
+  // let fn = ()=> {
+  //   let x = 1;
+  //   let fn1 = ()=> {
+  //     return x+1;
+  //   }
+  //   return fn1;
+  // }
+  // let res = fn();
+  // console.log(res())  //2;
+
+  //2.闭包的变量值始终保存在内存中
+  // let fn = ()=> {
+  //   let x = 1;
+  //   let fn1 = ()=> {
+  //     return x++;
+  //   }
+  //   return fn1;
+  // }
+  // let res = fn();
+  // console.log(res()); //1
+  // console.log(res()); //2
+
+  // 3.优先使用自己外层包裹的作用域
+  let fn = ()=> {
+    let x = 1;
+    let fn1 = ()=> {
+      console.log(x); //1
+    }
+    return fn1
+  }
+  let f:any = fn();
+  let fn2 = ()=> {
+    let x = 2;
+    return f();
+  }
+  fn2();
+
   return (
-    <h5>FuctionPractice</h5>
+    <h5>FunctionPractice</h5>
   )
 }
-export default FuctionPractice;
+export default FunctionPractice;
