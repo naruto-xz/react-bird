@@ -1,10 +1,11 @@
 import React, {useContext} from "react";
-import {AppSetContext} from './context/app';
+import {AppContext} from './context/app';
 
 const MarkingPage = ()=> {
-  const appSetContext = useContext(AppSetContext);
+  const appContext = useContext(AppContext);
+  const {setAppData} = appContext;
   const handle = ()=> {
-    appSetContext((state: any) => ({...state, age: state.age+1}))
+    setAppData((state: any) => ({...state, age: state.age+1}))
   }
   return (
     <div>

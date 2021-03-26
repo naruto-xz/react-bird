@@ -3,11 +3,12 @@ import {AppContext} from "./context/app"
 
 const HomePage = ()=> {
   const appContext = useContext(AppContext);
+  const {appData} = appContext;
   return (
     <div>
       <h4>HomePage</h4>
-      <div>{appContext.name}</div>
-      <div>{appContext.age}</div>
+      <div>{appData.name}</div>
+      <div>{appData.age}</div>
     </div>
   )
 }

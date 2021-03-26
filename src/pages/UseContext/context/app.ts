@@ -1,15 +1,19 @@
 import {createContext} from "react";
 
 interface AppTypes{
-  name: string,
-  age: number
+  appData:{
+    name: string,
+    age: number
+  },
+  setAppData: any;
 }
+const initState = {
+  appData:{
+    name: '',
+    age: 0
+  },
+  setAppData(){}
+}
+const AppContext = createContext<AppTypes>(initState);
 
-const AppContext = createContext<AppTypes>({
-  name: '',
-  age: 0,
-});
-
-const AppSetContext = createContext<any>(undefined);
-
-export {AppContext, AppSetContext};
+export {AppContext};

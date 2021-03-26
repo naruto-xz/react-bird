@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {AppContext, AppSetContext} from "./context/app";
+import {AppContext} from "./context/app";
 import HomePage from "./HomePage";
 import MarkingPage from "./MarkingPage";
 
@@ -9,14 +9,12 @@ const ContextPractise = ()=> {
     age: 23
   });
   return (
-    <AppContext.Provider value={appData}>
-      <AppSetContext.Provider value={setAppData}>
-        <div>
-          <h4>ContextPractise</h4>
-          <HomePage />
-          <MarkingPage />
-        </div>
-      </AppSetContext.Provider>
+    <AppContext.Provider value={{appData, setAppData}}>
+      <div>
+        <h4>ContextPractise</h4>
+        <HomePage />
+        <MarkingPage />
+      </div>
     </AppContext.Provider>
   )
 }

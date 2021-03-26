@@ -3,8 +3,10 @@ import React from 'react';
 /**
  * react hook练习
  */
-import ContextPractise from '@/pages/UseContext';
-import ReducerPractise from '@/pages/UseReducer';
+// import ContextPractise from '@/pages/UseContext';
+// import ReducerPractise from '@/pages/UseReducer';
+import LoginPractise from '@/pages/Login';
+
 // import Test from '@/pages/Test'
 // import UseEffect from "@/pages/UseEffect";
 // import UseCallback from '@/pages/UseCallback'
@@ -41,8 +43,11 @@ function App() {
   return (
     <div className="App">
       {/*react hook练习*/}
+
       {/*<ContextPractise></ContextPractise>*/}
-      <ReducerPractise></ReducerPractise>
+      {/*<ReducerPractise></ReducerPractise>*/}
+      <LoginPractise />
+
       {/*<Test></Test>*/}
       {/*<UseEffect></UseEffect>*/}
       {/*<UseCallback></UseCallback>*/}
