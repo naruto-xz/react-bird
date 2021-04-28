@@ -1,19 +1,3 @@
-//debounce 防抖
-{
-  function debounce(fn, time){
-    return function (...rest){  //rest为数组[24],可以被解构;
-      setTimeout(()=> {
-        fn.apply(this, rest);
-      },time)
-    }
-  }
-  function add(age){
-    console.log(age);
-  }
-  let func = debounce(add, 3000);
-  func(24);
-}
-
 //手撕jsonp
 function jsonp({url, params, cb}){
   return new Promise(resolve => {

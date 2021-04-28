@@ -34,7 +34,7 @@
     }
     return curFib;
   }
-  let res = fib(45);
+  let res = fib(5);
   console.log(res);
 }
 
@@ -59,3 +59,44 @@
   console.log(res);
 }
 
+//debounce 防抖
+//在事件被触发n秒后再执行回调，如果在这n秒内又被触发，则重新计时
+{
+  function debounce(fn, wait){
+    let timeout = null;
+    return function (...rest){  //rest为数组[24],可以被解构;
+      let context = this;
+      clearTimeout(timeout);
+      timeout = setTimeout(()=> {
+        fn.apply(context, rest);
+      },wait)
+    }
+  }
+  function add(age){
+    console.log(age);
+  }
+  let func = debounce(add, 3000);
+  func(24);
+}
+
+//节流
+//规定在一个单位时间内，只能触发一次函数。如果这个单位时间内触发多次函数，只有一次生效。
+{
+  function throttle(fn, wait) {
+    let timeout = null;
+    return function (...rest) {
+      let context = this;
+      if (!timeout) {
+        timeout = setTimeout(()=> {
+          timeout = null;
+          fn.apply(context, rest);
+        }, wait);
+      }
+    }
+  }
+  function add(age){
+    console.log(age);
+  }
+  let func = throttle(add, 4000);
+  func(4000);
+}
