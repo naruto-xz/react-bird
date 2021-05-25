@@ -100,7 +100,7 @@
     console.log('eat');
   };
   function Sun(){}
-  Sun.prototype = Father.prototype;
+  Sun.prototype = new Father();
   let sun = new Sun();
   console.log(sun.age);
   console.log(sun.eat());

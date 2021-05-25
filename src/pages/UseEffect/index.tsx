@@ -1,35 +1,38 @@
 import React, {useState, useEffect, useCallback} from "react";
 
 const UseEffect = (props: any)=> {
-  // console.log(props, '---props');
   const [count, setCount] = useState(0);
-  // const doSome = useCallback(()=> {
-  //   console.log(name, count, '---1111')
-  // }, [count])
+  const [total, setTotal] = useState(0);
 
-  // useEffect(() => {
-  //   doSome()
-  //   // console.log(count, '----111')
-  //   // document.title = `You clicked ${count} times`;
-  // }, [params]);
+  const changeCount = ()=> {
+    setCount(count + 1);
+  }
 
+  //只执行一次
   // useEffect(()=> {
-  //   let id = setInterval(()=> {
-  //     console.log(count, '----222')
-  //     // setCount(count + 1)
-  //     setCount(c => c+ 1)
-  //   }, 6000)
-  //   return ()=> {
-  //     console.log(id, '----333')
-  //     clearInterval(id)
-  //   }
-  // }, [])
+  //   setTotal(count);
+  // }, []);
 
-  console.log(count, '----111')
+  //监听变化
+  useEffect(()=> {
+    setTotal(count);
+  }, [count]);
+
+  //每次清除副作用
+  useEffect(()=> {
+    let time = setTimeout(()=> {
+      console.log(count);
+    }, 1000);
+    return ()=> {
+      clearTimeout(time);
+    }
+  }, [count])
+
   return (
     <div>
       <p>You clicked {count} times</p>
-      <button onClick={() => setCount(count + 1)}>
+      <p>total is {total}</p>
+      <button onClick={changeCount}>
         Click count
       </button>
     </div>

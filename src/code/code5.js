@@ -79,7 +79,7 @@
   func(24);
 }
 
-//节流
+//throttle 节流
 //规定在一个单位时间内，只能触发一次函数。如果这个单位时间内触发多次函数，只有一次生效。
 {
   function throttle(fn, wait) {
@@ -98,5 +98,38 @@
     console.log(age);
   }
   let func = throttle(add, 4000);
-  func(4000);
+  func(22);
 }
+
+//数组去重
+//利用Set方法
+{
+  let arr = [1,2,2,3,3];
+  let res = Array.from(new Set(arr));
+  console.log(res); //[1,2,3]
+}
+//利用includes方法
+{
+  let arr = [1,2,2,3,3];
+  let arr1 = [];
+  for(let i = 0; i<arr.length; i++){
+    if (!arr1.includes(arr[i])) {
+      arr1.push(arr[i]);
+    }
+  }
+  console.log(arr1); //[1,2,3]
+}
+//利用obj的key
+{
+  let arr = [1,2,2,3,3];
+  let arr1 = [];
+  let obj = {};
+  for(let i = 0; i<arr.length; i++){
+    if (!obj[arr[i]]) {
+      arr1.push(arr[i]);
+      obj[arr[i]] = true;
+    }
+  }
+  console.log(arr1); //[1,2,3]
+}
+

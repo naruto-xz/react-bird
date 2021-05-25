@@ -1,5 +1,5 @@
 import React from "react";
-// import BasePractice from "./Base";
+import BasePractice from "./Base";
 // import FormPractice from "./Form"
 // import FatherPractice from "./Father"
 import ContextPractice from "./Context";
@@ -25,12 +25,13 @@ class Home extends React.Component<any, any>{
       person: person
     })
   }
+
   render(){
     let {person,other} = this.state
     return (
       <div>
         <h4>Home</h4>
-        {/*<BasePractice person={person} other={other} onChange={this.addAge} />*/}
+        <BasePractice person={person} other={other} onChange={this.addAge} />
         {/*<FormPractice />*/}
         {/*<FatherPractice />*/}
         <ContextPractice />

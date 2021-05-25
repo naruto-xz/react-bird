@@ -48,8 +48,8 @@ class BasePractice extends React.Component<any, any>{
       num: num+1
       // num: num++ //num不会先变化，所以导致状态值是一直不变的
     })
-    // //不是立刻更新的
-    // console.log(this.state.num)
+    //不是立刻更新的
+    console.log(this.state.num, '-----不是立刻更新的') //1
   }
   add1 = ()=> {
     let { num } = this.state  //无用
@@ -61,31 +61,33 @@ class BasePractice extends React.Component<any, any>{
     // })
 
     this.setState((state:any)=> {
+      console.log(state, '----11')
       return {
         num: state.num+1
       }
     })
     this.setState((state:any)=> {
+      console.log(state, '----22')
       return {
         num: state.num+1
       }
     })
-    console.log(this.state.num) //1 3 5
+    console.log(this.state.num, '------不是立刻更新的')  //1
   }
   add2 = ()=>{
     this.setState({
       num: this.state.num+1
     },()=> {
-      console.log(this.state.num) //2
+      console.log(this.state.num, '支持第二个参数为回调函数，可以拿到最新的值') //2
     })
-
-    // this.setState((state:any)=> {
-    //   return {
-    //     num: state.num+1
-    //   }
-    // }, ()=> {
-    //   console.log(this.state.num) //2
-    // })
+  }
+  add3 = ()=> {
+    setTimeout(()=>{
+      this.setState({
+        num: this.state.num+1
+      })
+      console.log(this.state.num, '----时时的') //2
+    }, 3000)
   }
   addAge = ()=> {
     this.props.onChange(1)
@@ -101,6 +103,7 @@ class BasePractice extends React.Component<any, any>{
         <button onClick={this.add}>add</button>
         <button onClick={this.add1}>add1</button>
         <button onClick={this.add2}>add2</button>
+        <button onClick={this.add3}>add3</button>
         <div>{person.name} : {person.age}</div>
         <div>{other.sex}</div>
         <button onClick={this.addAge}>addAge</button>

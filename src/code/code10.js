@@ -36,7 +36,7 @@
   console.log(curryAdd(1)(2, 3)); //6
 }
 
-//参数长度不确定
+//函数参数长度不确定
 {
   function curry(fn){
     let args = [];

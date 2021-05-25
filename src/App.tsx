@@ -5,18 +5,28 @@ import React from 'react';
  */
 // import ContextPractise from '@/pages/UseContext';
 // import ReducerPractise from '@/pages/UseReducer';
-import LoginPractise from '@/pages/Login';
+// import LoginPractise from '@/pages/Login';
 
 // import Test from '@/pages/Test'
-// import UseEffect from "@/pages/UseEffect";
-// import UseCallback from '@/pages/UseCallback'
+import UseState from "@/pages/UseState";
+import UseEffect from "@/pages/UseEffect";
+import UseCallback from '@/pages/UseCallback'
 // import UseMemo from '@/pages/UseMemo'
 // import UseRef from "@/pages/UseRef"
 /**
  * react class练习
  */
-// import HomeModule from "@/pages/Home/index"
-
+import HomeModule from "@/pages/Home/index"
+/**
+ * react redux练习
+ */
+// import ReduxModule from '@/pages/ReduxModule/index'
+import ReactReduxModule from '@/pages/ReactReduxModule/index'
+//纯redux
+// import "@/pages/Store";
+//借助react-redux
+import {Provider} from 'react-redux';
+import store from "@/pages/Store";
 /**
  * JS练习
  */
@@ -46,11 +56,12 @@ function App() {
 
       {/*<ContextPractise></ContextPractise>*/}
       {/*<ReducerPractise></ReducerPractise>*/}
-      <LoginPractise />
+      {/*<LoginPractise />*/}
 
       {/*<Test></Test>*/}
+      {/*<UseState></UseState>*/}
       {/*<UseEffect></UseEffect>*/}
-      {/*<UseCallback></UseCallback>*/}
+      <UseCallback></UseCallback>
       {/*<UseMemo></UseMemo>*/}
       {/*<UseRef></UseRef>*/}
 
@@ -58,6 +69,15 @@ function App() {
 
       {/*react class练习*/}
       {/*<HomeModule></HomeModule>*/}
+
+      {/*react redux练习*/}
+      {/*纯redux*/}
+      {/*<ReduxModule></ReduxModule>*/}
+      {/*借助react-redux*/}
+      {/*<Provider store={store}>*/}
+      {/*  <ReactReduxModule></ReactReduxModule>*/}
+      {/*</Provider>*/}
+
 
       {/*JS练习*/}
       {/*<StringPractice />*/}
