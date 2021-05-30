@@ -74,7 +74,8 @@
     "progress-webpack-plugin": "^0.0.24",
     "rc-search": "^1.0.4",
     "react-redux": "^7.2.4",
-    "redux": "^4.1.0"
+    "redux": "^4.1.0",
+    "x-design": "^1.0.11"
   },
   "scripts": {
     "start": "node scripts/start.js",
