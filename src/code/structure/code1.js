@@ -31,7 +31,7 @@
   // console.log(stack.print());
 }
 
-//应用场景：函数调用栈
+//应用场景：函数调用
 {
   function a(){
     return 'a'+b();
@@ -47,8 +47,14 @@
 }
 
 //练习一：定义栈的数据结构，请在该类型中实现一个能够得到栈中所含最小元素的min函数（时间复杂度应为O（1））。
+//如数据[3,4,2,7,9,0]依次入栈，出栈的对应的栈为[3,3,2,2,2,0]
 /**
+ *  利用辅助栈存储栈中对应元素的最小值，使得辅助栈的栈顶永远是最小值
  *
+ *  1.定义两个栈，一个栈用于存储数据，另一个栈用于存储每次数据进栈时栈的最小值.
+ *  2.每次数据进栈时，将此数据和最小值栈的栈顶元素比较，将二者比较的较小值再次存入最小值栈.
+ *  3.数据栈出栈，最小值栈也出栈。
+ *  4.这样最小值栈的栈顶永远是当前栈的最小值。
  */
 {
   function MinStack(){
@@ -56,7 +62,7 @@
     let minArr = [];
     this.push = function (element) {
       arr.push(element);
-      if (this.min() && element < this.min()) {
+      if (minArr.length === 0 || element < this.min()) {
         minArr.push(element);
       } else {
         minArr.push(this.min());
@@ -67,7 +73,9 @@
       return arr.pop();
     }
     this.peek = function (){
-      return arr[arr.length - 1];
+      if (arr.length) {
+        return arr[arr.length - 1];
+      }
     }
     this.min = function () {
       if (minArr.length) {
@@ -76,6 +84,14 @@
     }
   }
   let stack = new MinStack();
+  stack.push(3);
+  stack.push(4);
+  stack.push(2);
+  console.log(stack.min()); //2
+  stack.pop();
+  console.log(stack.min()); //3
+  stack.pop();
+  console.log(stack.min()); //3
 }
 
 //练习二：给定一个只包括 '('，')'，'{'，'}'，'['，']' 的字符串 s ，判断字符串是否有效。
