@@ -16,7 +16,7 @@
       arr.push(node);
     }
     this.dequeue = function () {
-      return arr.shift();
+      arr.shift();
     }
     this.front = function () {
       return arr[0];
@@ -58,7 +58,7 @@
     }
     //其它都一样
     this.dequeue = function(){
-      return arr.shift();
+      arr.shift();
     }
     this.front = function () {
       return arr[0];

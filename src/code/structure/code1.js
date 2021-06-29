@@ -6,7 +6,7 @@
       arr.push(element)
     }
     this.pop = function () {
-      return arr.pop();
+      arr.pop();
     }
     this.peek = function () {
       if (arr.length) {

@@ -75,8 +75,7 @@
     "rc-search": "^1.0.4",
     "react-redux": "^7.2.4",
     "redux": "^4.1.0",
-    "x-component-test": "^1.0.1",
-    "x-design": "^1.0.11"
+    "x-component-test": "^1.0.1"
   },
   "scripts": {
     "start": "node scripts/start.js",
