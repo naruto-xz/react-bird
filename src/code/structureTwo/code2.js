@@ -1,4 +1,4 @@
-//练习一：写一个RecentCounter类来计算特定时间范围内最近的请求。
+//练习1：写一个RecentCounter类来计算特定时间范围内最近的请求。
 /**
  * 请你实现 RecentCounter 类：
  * RecentCounter() 初始化计数器，请求数为 0 。
@@ -34,4 +34,3 @@
   console.log(recentCounter.ping(3002));  // requests = [1, 100, 3001, 3002]，范围是 [2,3002]，返回 3
   console.log(recentCounter.ping(8002));  // requests = [8002]，范围是 [5002,8002]，返回 1
 }
-
