@@ -3,7 +3,7 @@ import React from 'react';
 /**
  * react hook练习
  */
-// import ContextPractise from '@/pages/UseContext';
+import ContextPractise from '@/pages/UseContext';
 // import ReducerPractise from '@/pages/UseReducer';
 // import LoginPractise from '@/pages/Login';
 
@@ -54,14 +54,14 @@ function App() {
     <div className="App">
       {/*react hook练习*/}
 
-      {/*<ContextPractise></ContextPractise>*/}
+      <ContextPractise></ContextPractise>
       {/*<ReducerPractise></ReducerPractise>*/}
       {/*<LoginPractise />*/}
 
       {/*<Test></Test>*/}
       {/*<UseState></UseState>*/}
       {/*<UseEffect></UseEffect>*/}
-      <UseCallback></UseCallback>
+      {/*<UseCallback></UseCallback>*/}
       {/*<UseMemo></UseMemo>*/}
       {/*<UseRef></UseRef>*/}
 

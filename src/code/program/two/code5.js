@@ -66,7 +66,7 @@
       if (!timeout) {
         timeout = setTimeout(()=> {
           timeout = null;
-          return fn.apply(context, rest);
+          fn.apply(context, rest);
         }, wait)
       }
     }

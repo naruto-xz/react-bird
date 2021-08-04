@@ -14,9 +14,10 @@ import 'antd/dist/antd.css';
 // })
 // import Search from "rc-search"
 // import "rc-search/lib/index.css";
-import XButton from "x-component-test";
+// import XButton from "x-component-test";
 
 ReactDOM.render(
-  <XButton type={"primary"}>test</XButton>,
+  // <XButton type={"primary"}>test</XButton>,
+  <App />,
   document.getElementById('root')
 );
